@@ -195,6 +195,75 @@ p {
     transition: all var(--transition-fast);
 }
 
+/* Dropdown Menu */
+.nav-dropdown {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(45deg);
+    margin-left: 6px;
+    margin-bottom: 2px;
+    transition: transform var(--transition-fast);
+}
+
+.nav-dropdown:hover .dropdown-toggle::after {
+    transform: rotate(-135deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: -1rem;
+    min-width: 240px;
+    background-color: var(--color-white);
+    border-radius: 8px;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--color-gray-200);
+    padding: 0.75rem 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all var(--transition-normal);
+    list-style: none;
+    z-index: 100;
+}
+
+.nav-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu li {
+    padding: 0;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    color: var(--color-text);
+    font-weight: 400;
+    font-size: 0.95rem;
+    transition: all var(--transition-fast);
+}
+
+.dropdown-menu a::after {
+    display: none;
+}
+
+.dropdown-menu a:hover {
+    background-color: var(--color-gray-50);
+    color: var(--color-accent);
+    padding-left: 1.75rem;
+}
+
 /* Hero Section */
 .hero {
     position: relative;
@@ -426,6 +495,11 @@ section {
     gap: 2rem;
 }
 
+a.service-card {
+    display: block;
+    text-decoration: none;
+}
+
 .service-card {
     background-color: var(--color-white);
     padding: 2.5rem;
@@ -433,6 +507,7 @@ section {
     box-shadow: var(--shadow-sm);
     border: 1px solid var(--color-gray-200);
     transition: all var(--transition-normal);
+    cursor: pointer;
 }
 
 .service-card:hover {
@@ -469,61 +544,92 @@ section {
     line-height: 1.7;
 }
 
-/* Seminars Section */
-.seminars {
-    background-color: var(--color-gray-50);
+/* Service Detail Pages */
+.service-hero {
+    background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+    padding: 8rem 0 4rem;
+    margin-top: 60px;
 }
 
-.seminars-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+.service-hero-content {
+    max-width: 800px;
 }
 
-.seminar-card {
-    background-color: var(--color-white);
-    padding: 2.5rem;
-    border-radius: 12px;
-    box-shadow: var(--shadow-sm);
-    border: 1px solid var(--color-gray-200);
-    display: flex;
-    flex-direction: column;
-    transition: all var(--transition-normal);
+.back-link {
+    display: inline-block;
+    color: var(--color-accent-light);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    transition: color var(--transition-fast);
 }
 
-.seminar-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
-    border-color: var(--color-accent);
-}
-
-.seminar-icon {
-    width: 48px;
-    height: 48px;
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1.25rem;
-}
-
-.seminar-icon svg {
-    width: 24px;
-    height: 24px;
+.back-link:hover {
     color: var(--color-white);
 }
 
-.seminar-card h3 {
-    margin-bottom: 0.75rem;
-    color: var(--color-primary-dark);
-    font-size: 1.35rem;
+.service-hero h1 {
+    color: var(--color-white);
+    margin-bottom: 1rem;
 }
 
-.seminar-card p {
-    color: var(--color-text-light);
+.service-hero .lead {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.25rem;
     margin-bottom: 0;
+}
+
+.service-detail {
+    padding: 4rem 0;
+    background-color: var(--color-white);
+}
+
+.service-content {
+    max-width: 800px;
+    margin-bottom: 3rem;
+}
+
+.service-content h2 {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.75rem;
+}
+
+.service-content h2:first-child {
+    margin-top: 0;
+}
+
+.service-content p {
+    color: var(--color-text);
+    line-height: 1.8;
+}
+
+.service-content ul {
+    margin: 1.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.service-content li {
+    color: var(--color-text);
+    margin-bottom: 0.75rem;
     line-height: 1.7;
+}
+
+.service-cta {
+    background: linear-gradient(135deg, var(--color-gray-50) 0%, var(--color-white) 100%);
+    padding: 3rem;
+    border-radius: 12px;
+    border: 1px solid var(--color-gray-200);
+    max-width: 600px;
+}
+
+.service-cta h3 {
+    margin-bottom: 0.75rem;
+    color: var(--color-primary-dark);
+}
+
+.service-cta p {
+    color: var(--color-text-light);
+    margin-bottom: 1.5rem;
 }
 
 /* Contact Section */
@@ -677,11 +783,22 @@ section {
         height: 100vh;
         background-color: var(--color-white);
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 2rem;
+        justify-content: flex-start;
+        align-items: stretch;
+        gap: 0;
+        padding-top: 5rem;
         box-shadow: var(--shadow-xl);
         transition: right var(--transition-normal);
+        overflow-y: auto;
+    }
+
+    .nav-menu > li {
+        border-bottom: 1px solid var(--color-gray-100);
+    }
+
+    .nav-menu > li > a {
+        display: block;
+        padding: 1rem 1.5rem;
     }
 
     .nav-menu.active {
@@ -691,6 +808,34 @@ section {
     .nav-toggle {
         display: flex;
         z-index: 1001;
+    }
+
+    .nav-dropdown {
+        position: static;
+    }
+
+    .dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        border: none;
+        border-radius: 0;
+        background-color: var(--color-gray-50);
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height var(--transition-normal);
+    }
+
+    .nav-dropdown.active .dropdown-menu {
+        max-height: 500px;
+    }
+
+    .dropdown-menu a {
+        padding: 0.75rem 2rem;
+        font-size: 0.9rem;
     }
 
     .nav-toggle.active span:nth-child(1) {
@@ -716,10 +861,6 @@ section {
     }
 
     .services-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .seminars-grid {
         grid-template-columns: 1fr;
     }
 

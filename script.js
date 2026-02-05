@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }, observerOptions);
 
     // Observe elements for animation
-    document.querySelectorAll('.service-card, .stat, .about-text, .contact-item, .contact-cta, .leader-card, .seminar-card').forEach(el => {
+    document.querySelectorAll('.service-card, .stat, .about-text, .contact-item, .contact-cta, .leader-card').forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(20px)';
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
@@ -118,9 +118,14 @@ document.addEventListener('DOMContentLoaded', function() {
         card.style.transitionDelay = `${index * 0.1}s`;
     });
 
-    // Stagger animation for seminar cards
-    const seminarCards = document.querySelectorAll('.seminar-card');
-    seminarCards.forEach((card, index) => {
-        card.style.transitionDelay = `${index * 0.1}s`;
+    // Mobile dropdown toggle
+    const dropdownToggles = document.querySelectorAll('.nav-dropdown > a');
+    dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', function(e) {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                this.parentElement.classList.toggle('active');
+            }
+        });
     });
 });
