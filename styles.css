@@ -2,27 +2,27 @@
    Civic Directive - Modern Professional Styling
    ============================================ */
 
-/* CSS Variables */
+/* CSS Variables - Steel Blue & Copper Amber palette */
 :root {
-    --color-primary: #1a365d;
-    --color-primary-light: #2c5282;
-    --color-primary-dark: #0f2440;
-    --color-accent: #3182ce;
-    --color-accent-light: #4299e1;
-    --color-text: #2d3748;
-    --color-text-light: #718096;
-    --color-text-muted: #a0aec0;
+    --color-primary: #1b3a4b;
+    --color-primary-light: #2c5f7c;
+    --color-primary-dark: #0d1b2a;
+    --color-accent: #c47a3a;
+    --color-accent-light: #d4956b;
+    --color-text: #1a2332;
+    --color-text-light: #5a6d7e;
+    --color-text-muted: #8a9bac;
     --color-white: #ffffff;
-    --color-gray-50: #f7fafc;
-    --color-gray-100: #edf2f7;
-    --color-gray-200: #e2e8f0;
-    --color-gray-800: #1a202c;
-    --color-gray-900: #171923;
+    --color-gray-50: #f5f7f9;
+    --color-gray-100: #e8ecf0;
+    --color-gray-200: #d1d8e0;
+    --color-gray-800: #141e2b;
+    --color-gray-900: #0d1520;
     --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --shadow-sm: 0 1px 2px 0 rgba(13, 27, 42, 0.06);
+    --shadow-md: 0 4px 6px -1px rgba(13, 27, 42, 0.1), 0 2px 4px -1px rgba(13, 27, 42, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(13, 27, 42, 0.1), 0 4px 6px -2px rgba(13, 27, 42, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(13, 27, 42, 0.12), 0 10px 10px -5px rgba(13, 27, 42, 0.06);
     --transition-fast: 150ms ease;
     --transition-normal: 300ms ease;
 }
@@ -202,7 +202,7 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 50%, var(--color-primary-light) 100%);
+    background: url('images/hero.jpg') center center / cover no-repeat;
     overflow: hidden;
 }
 
@@ -213,9 +213,12 @@ p {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image:
-        linear-gradient(rgba(26, 54, 93, 0.9), rgba(26, 54, 93, 0.85)),
-        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background: linear-gradient(
+        to bottom,
+        rgba(13, 27, 42, 0.7) 0%,
+        rgba(13, 27, 42, 0.5) 40%,
+        rgba(13, 27, 42, 0.65) 100%
+    );
 }
 
 .hero-overlay {
@@ -225,8 +228,8 @@ p {
     right: 0;
     bottom: 0;
     background:
-        radial-gradient(ellipse at 20% 80%, rgba(49, 130, 206, 0.15) 0%, transparent 50%),
-        radial-gradient(ellipse at 80% 20%, rgba(66, 153, 225, 0.1) 0%, transparent 50%);
+        radial-gradient(ellipse at 50% 50%, rgba(196, 122, 58, 0.08) 0%, transparent 60%),
+        radial-gradient(ellipse at 20% 80%, rgba(27, 58, 75, 0.2) 0%, transparent 50%);
 }
 
 .hero-content {
@@ -250,7 +253,7 @@ p {
     letter-spacing: 0.3em;
     text-transform: uppercase;
     margin-bottom: 1.5rem;
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--color-accent-light);
 }
 
 .hero-description {
@@ -279,7 +282,7 @@ section {
 .section-divider {
     width: 60px;
     height: 3px;
-    background: linear-gradient(90deg, var(--color-accent), var(--color-primary));
+    background: linear-gradient(90deg, var(--color-accent), var(--color-accent-light));
     margin: 0 auto 1.5rem;
     border-radius: 2px;
 }
@@ -377,7 +380,7 @@ section {
 .service-icon {
     width: 56px;
     height: 56px;
-    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-primary) 100%);
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -485,7 +488,7 @@ section {
 }
 
 .footer-tagline {
-    color: var(--color-text-muted);
+    color: var(--color-accent-light);
     font-size: 0.875rem;
     margin-top: 0.5rem;
     margin-bottom: 0;
