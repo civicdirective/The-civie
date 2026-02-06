@@ -546,12 +546,34 @@ a.service-card {
 
 /* Service Detail Pages */
 .service-hero {
+    position: relative;
     background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
     padding: 8rem 0 4rem;
     margin-top: 60px;
+    background-size: cover;
+    background-position: center;
+}
+
+.service-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(13, 27, 42, 0.85) 0%,
+        rgba(27, 58, 75, 0.8) 100%
+    );
+}
+
+.service-hero--survey {
+    background-image: url('../images/survey.webp');
 }
 
 .service-hero-content {
+    position: relative;
+    z-index: 1;
     max-width: 800px;
 }
 
