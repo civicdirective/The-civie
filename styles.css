@@ -620,6 +620,13 @@ a.service-card {
     margin-top: 0;
 }
 
+.service-content h3 {
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+    color: var(--color-primary);
+}
+
 .service-content p {
     color: var(--color-text);
     line-height: 1.8;
