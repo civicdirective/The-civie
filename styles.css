@@ -159,7 +159,7 @@ p {
     padding: 0.5rem 0;
 }
 
-.nav-menu a::after {
+.nav-menu a:not(.dropdown-toggle)::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -174,7 +174,7 @@ p {
     color: var(--color-accent);
 }
 
-.nav-menu a:hover::after {
+.nav-menu a:not(.dropdown-toggle):hover::after {
     width: 100%;
 }
 
