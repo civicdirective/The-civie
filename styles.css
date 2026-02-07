@@ -569,7 +569,7 @@ a.service-card {
 }
 
 .service-hero--survey {
-    background-image: url('../images/survey.webp');
+    background-image: url('images/survey.webp');
 }
 
 .service-hero-content {
