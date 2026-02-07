@@ -572,6 +572,10 @@ a.service-card {
     background-image: url('images/survey.webp');
 }
 
+.service-hero--gis {
+    background-image: url('images/GIS.webp');
+}
+
 .service-hero--policy {
     background-image: url('images/policy.png');
 }
