@@ -572,6 +572,10 @@ a.service-card {
     background-image: url('images/survey.webp');
 }
 
+.service-hero--policy {
+    background-image: url('images/policy.png');
+}
+
 .service-hero-content {
     position: relative;
     z-index: 1;
