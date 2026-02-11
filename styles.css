@@ -779,21 +779,19 @@ a.service-card {
 }
 
 .footer-careers {
-    max-width: 300px;
+    display: flex;
+    align-items: center;
 }
 
-.footer-careers h4 {
-    color: var(--color-white);
+.footer-careers-link {
+    color: var(--color-accent-light);
     font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
+    font-weight: 500;
+    transition: color var(--transition-fast);
 }
 
-.footer-careers p {
-    color: var(--color-text-muted);
-    font-size: 0.875rem;
-    line-height: 1.5;
-    margin-bottom: 0;
+.footer-careers-link:hover {
+    color: var(--color-accent);
 }
 
 .footer-bottom {
