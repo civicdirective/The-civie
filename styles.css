@@ -477,6 +477,39 @@ section {
     color: var(--color-primary-dark);
 }
 
+.leader-name a {
+    color: var(--color-primary-dark);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.leader-name a:hover {
+    color: var(--color-accent);
+}
+
+/* Bio page hero */
+.bio-hero {
+    background-color: var(--color-primary-dark);
+    padding: 5rem 0 4rem;
+    color: var(--color-white);
+}
+
+.bio-hero-content .back-link {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+}
+
+.bio-hero-content h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 0.75rem;
+}
+
+.bio-hero-content .lead {
+    color: var(--color-accent-light);
+    font-size: 1.125rem;
+    margin-bottom: 0;
+}
+
 .leader-title {
     font-size: 0.95rem;
     color: var(--color-accent);
