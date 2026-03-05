@@ -502,6 +502,7 @@ section {
 .bio-hero-content h1 {
     font-size: clamp(2rem, 4vw, 3rem);
     margin-bottom: 0.75rem;
+    color: var(--color-white);
 }
 
 .bio-hero-content .lead {
