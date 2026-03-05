@@ -525,7 +525,7 @@ section {
     height: 160px;
     border-radius: 50%;
     object-fit: cover;
-    object-position: center 20%;
+    object-position: center 30%;
     margin: 0.25rem 0 1rem 1.5rem;
     box-shadow: var(--shadow-md);
     border: 3px solid var(--color-gray-100);
