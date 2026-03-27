@@ -735,61 +735,12 @@ a.service-card {
     background-color: var(--color-white);
 }
 
-.contact-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-}
-
-.contact-info {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.contact-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 1.25rem;
-}
-
-.contact-item svg {
-    width: 24px;
-    height: 24px;
-    color: var(--color-accent);
-    flex-shrink: 0;
-    margin-top: 0.25rem;
-}
-
-.contact-item h4 {
-    margin-bottom: 0.25rem;
-    color: var(--color-primary-dark);
-}
-
-.contact-item a {
-    color: var(--color-accent);
-    font-size: 1.125rem;
-}
-
-.contact-item a:hover {
-    color: var(--color-primary);
-    text-decoration: underline;
-}
-
-.contact-info-text {
-    color: var(--color-text-light);
-    line-height: 1.7;
-    margin-top: 0.5rem;
+.contact-form-wrap {
+    max-width: 700px;
+    margin: 0 auto;
 }
 
 /* Contact Form */
-.contact-form-wrapper {
-    background: linear-gradient(135deg, var(--color-gray-50) 0%, var(--color-white) 100%);
-    padding: 3rem;
-    border-radius: 12px;
-    border: 1px solid var(--color-gray-100);
-}
 
 .contact-form {
     display: flex;
@@ -862,8 +813,14 @@ a.service-card {
     cursor: pointer;
 }
 
+.form-footer {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
 .form-submit {
-    align-self: flex-start;
     min-width: 160px;
 }
 
@@ -872,9 +829,24 @@ a.service-card {
     cursor: not-allowed;
 }
 
+.contact-phone-note {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+}
+
+.contact-phone-note a {
+    color: var(--color-accent);
+    font-weight: 500;
+}
+
+.contact-phone-note a:hover {
+    text-decoration: underline;
+}
+
 .form-status {
     font-size: 0.9rem;
     min-height: 1.25rem;
+    margin-top: 0.25rem;
 }
 
 .form-status.success {
@@ -883,20 +855,6 @@ a.service-card {
 
 .form-status.error {
     color: #b91c1c;
-}
-
-.contact-cta {
-    background: linear-gradient(135deg, var(--color-gray-50) 0%, var(--color-white) 100%);
-    padding: 3rem;
-    border-radius: 12px;
-    border: 1px solid var(--color-gray-200);
-    text-align: center;
-}
-
-.contact-cta p {
-    color: var(--color-text);
-    margin-bottom: 2rem;
-    font-size: 1.125rem;
 }
 
 /* Footer */
@@ -989,10 +947,6 @@ a.service-card {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .contact-content {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
 }
 
 @media (max-width: 768px) {
@@ -1117,14 +1071,6 @@ a.service-card {
     }
 
     .service-card {
-        padding: 2rem;
-    }
-
-    .contact-cta {
-        padding: 2rem;
-    }
-
-    .contact-form-wrapper {
         padding: 2rem;
     }
 

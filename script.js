@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }, observerOptions);
 
     // Observe elements for animation
-    document.querySelectorAll('.service-card, .stat, .about-text, .contact-item, .contact-cta, .leader-card').forEach(el => {
+    document.querySelectorAll('.service-card, .stat, .about-text, .contact-form-wrap, .leader-card').forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(20px)';
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
