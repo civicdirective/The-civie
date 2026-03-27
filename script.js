@@ -128,4 +128,46 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // Contact form submission
+    const contactForm = document.getElementById('contact-form');
+    const formStatus = document.getElementById('form-status');
+
+    if (contactForm && formStatus) {
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const submitBtn = contactForm.querySelector('.form-submit');
+            const originalText = submitBtn.textContent;
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            formStatus.className = 'form-status';
+            formStatus.textContent = '';
+
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: new FormData(contactForm),
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    formStatus.className = 'form-status success';
+                    formStatus.textContent = 'Thank you! We\'ll be in touch shortly.';
+                    contactForm.reset();
+                } else {
+                    const data = await response.json();
+                    formStatus.className = 'form-status error';
+                    formStatus.textContent = data.errors
+                        ? data.errors.map(err => err.message).join(', ')
+                        : 'Something went wrong. Please try again.';
+                }
+            } catch {
+                formStatus.className = 'form-status error';
+                formStatus.textContent = 'Something went wrong. Please try again.';
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+            }
+        });
+    }
 });
