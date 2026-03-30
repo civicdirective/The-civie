@@ -628,8 +628,8 @@ a.service-card {
     background-image: url('images/survey.webp');
 }
 
-.service-hero--gis {
-    background-image: url('images/GIS.webp');
+.service-hero--usability-studies {
+    background-color: #1b3a4b;
 }
 
 .service-hero--policy {
